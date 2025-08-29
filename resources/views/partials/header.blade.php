@@ -21,7 +21,7 @@
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
-    <!-- Header corregido -->
+    <!-- Header corregido - SOLO UN HEADER -->
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-3">
             <div class="flex items-center justify-between">
@@ -42,11 +42,11 @@
                             </svg>
                         </button>
                         <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-48 z-10">
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Tablas</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Ruedas</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Trucks</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Rodamientos</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Patinetas Completas</a>
+                            <a href="/skate/tablas" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Tablas</a>
+                            <a href="/skate/ruedas" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Ruedas</a>
+                            <a href="/skate/trucks" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Trucks</a>
+                            <a href="/skate/rodamientos" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Rodamientos</a>
+                            <a href="/skate/completas" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Patinetas Completas</a>
                         </div>
                     </div>
 
@@ -58,10 +58,10 @@
                             </svg>
                         </button>
                         <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-48 z-10">
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Patines</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Ruedas</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Protecciones</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Accesorios</a>
+                            <a href="/roller/patines" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Patines</a>
+                            <a href="/roller/ruedas" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Ruedas</a>
+                            <a href="/roller/protecciones" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Protecciones</a>
+                            <a href="/roller/accesorios" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Accesorios</a>
                         </div>
                     </div>
 
@@ -73,9 +73,9 @@
                             </svg>
                         </button>
                         <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-48 z-10">
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Todos los Tenis</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Por Tallas</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Por Marcas</a>
+                            <a href="/tenis" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Todos los Tenis</a>
+                            <a href="/tenis/tallas" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Por Tallas</a>
+                            <a href="/tenis/marcas" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Por Marcas</a>
                         </div>
                     </div>
 
@@ -90,22 +90,22 @@
                             <div class="submenu-grid">
                                 <div>
                                     <p class="font-semibold px-4 py-2 text-blue-600">Hombre</p>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Playeras</a>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Pantalones</a>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Chamarras</a>
+                                    <a href="/ropa/hombre/playeras" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Playeras</a>
+                                    <a href="/ropa/hombre/pantalones" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Pantalones</a>
+                                    <a href="/ropa/hombre/chamarras" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Chamarras</a>
                                 </div>
                                 <div>
                                     <p class="font-semibold px-4 py-2 text-blue-600">Mujer</p>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Playeras</a>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Pantalones</a>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Chamarras</a>
+                                    <a href="/ropa/mujer/playeras" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Playeras</a>
+                                    <a href="/ropa/mujer/pantalones" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Pantalones</a>
+                                    <a href="/ropa/mujer/chamarras" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Chamarras</a>
                                 </div>
                                 <div>
                                     <p class="font-semibold px-4 py-2 text-blue-600">Accesorios</p>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Calcetas</a>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Beanies</a>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Gorras</a>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Cinturones</a>
+                                    <a href="/ropa/accesorios/calcetas" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Calcetas</a>
+                                    <a href="/ropa/accesorios/beanies" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Beanies</a>
+                                    <a href="/ropa/accesorios/gorras" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Gorras</a>
+                                    <a href="/ropa/accesorios/cinturones" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Cinturones</a>
                                 </div>
                             </div>
                         </div>
@@ -119,16 +119,16 @@
                             </svg>
                         </button>
                         <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-48 z-10">
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Mochilas</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Stickers</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Carteras</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Fingerboards</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Gafas</a>
+                            <a href="/accesorios/mochilas" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Mochilas</a>
+                            <a href="/accesorios/stickers" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Stickers</a>
+                            <a href="/accesorios/carteras" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Carteras</a>
+                            <a href="/accesorios/fingerboards" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Fingerboards</a>
+                            <a href="/accesorios/gafas" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Gafas</a>
                         </div>
                     </div>
 
                     <!-- Mapa -->
-                    <a href="#" class="hover:text-blue-600 transition-all">📍 Mapa</a>
+                    <a href="/mapa" class="hover:text-blue-600 transition-all">📍 Mapa</a>
 
                 </nav>
 
@@ -141,19 +141,19 @@
                     </button>
 
                     <!-- Botón Favoritos -->
-                    <a href="#" class="text-gray-600 hover:text-red-600 relative transition-all">
+                    <a href="/favoritos" class="text-gray-600 hover:text-red-600 relative transition-all">
                         <i class="far fa-heart text-xl"></i>
                         <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
                     </a>
 
                     <!-- Botón Carrito -->
-                    <a href="#" class="text-gray-600 hover:text-green-600 relative transition-all">
+                    <a href="/carrito" class="text-gray-600 hover:text-green-600 relative transition-all">
                         <i class="fas fa-shopping-cart text-xl"></i>
                         <span class="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
                     </a>
 
                     <!-- Botón Login -->
-                    <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">
+                    <a href="/login" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">
                         Iniciar Sesión
                     </a>
 
@@ -177,11 +177,11 @@
                         </svg>
                     </button>
                     <div id="skate-submenu" class="hidden pl-4 mt-1 space-y-1">
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Tablas</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Ruedas</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Trucks</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Rodamientos</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Completas</a>
+                        <a href="/skate/tablas" class="block text-gray-600 hover:text-blue-600 transition-all">Tablas</a>
+                        <a href="/skate/ruedas" class="block text-gray-600 hover:text-blue-600 transition-all">Ruedas</a>
+                        <a href="/skate/trucks" class="block text-gray-600 hover:text-blue-600 transition-all">Trucks</a>
+                        <a href="/skate/rodamientos" class="block text-gray-600 hover:text-blue-600 transition-all">Rodamientos</a>
+                        <a href="/skate/completas" class="block text-gray-600 hover:text-blue-600 transition-all">Completas</a>
                     </div>
                 </div>
 
@@ -194,10 +194,10 @@
                         </svg>
                     </button>
                     <div id="roller-submenu" class="hidden pl-4 mt-1 space-y-1">
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Patines</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Ruedas</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Protecciones</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Accesorios</a>
+                        <a href="/roller/patines" class="block text-gray-600 hover:text-blue-600 transition-all">Patines</a>
+                        <a href="/roller/ruedas" class="block text-gray-600 hover:text-blue-600 transition-all">Ruedas</a>
+                        <a href="/roller/protecciones" class="block text-gray-600 hover:text-blue-600 transition-all">Protecciones</a>
+                        <a href="/roller/accesorios" class="block text-gray-600 hover:text-blue-600 transition-all">Accesorios</a>
                     </div>
                 </div>
 
@@ -210,9 +210,9 @@
                         </svg>
                     </button>
                     <div id="tenis-submenu" class="hidden pl-4 mt-1 space-y-1">
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Todos los Tenis</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Por Tallas</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Por Marcas</a>
+                        <a href="/tenis" class="block text-gray-600 hover:text-blue-600 transition-all">Todos los Tenis</a>
+                        <a href="/tenis/tallas" class="block text-gray-600 hover:text-blue-600 transition-all">Por Tallas</a>
+                        <a href="/tenis/marcas" class="block text-gray-600 hover:text-blue-600 transition-all">Por Marcas</a>
                     </div>
                 </div>
 
@@ -226,20 +226,20 @@
                     </button>
                     <div id="ropa-submenu" class="hidden pl-4 mt-1 space-y-1">
                         <p class="font-semibold text-blue-600">Hombre</p>
-                        <a href="#" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Playeras</a>
-                        <a href="#" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Pantalones</a>
-                        <a href="#" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Chamarras</a>
+                        <a href="/ropa/hombre/playeras" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Playeras</a>
+                        <a href="/ropa/hombre/pantalones" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Pantalones</a>
+                        <a href="/ropa/hombre/chamarras" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Chamarras</a>
                         
                         <p class="font-semibold text-blue-600 mt-2">Mujer</p>
-                        <a href="#" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Playeras</a>
-                        <a href="#" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Pantalones</a>
-                        <a href="#" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Chamarras</a>
+                        <a href="/ropa/mujer/playeras" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Playeras</a>
+                        <a href="/ropa/mujer/pantalones" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Pantalones</a>
+                        <a href="/ropa/mujer/chamarras" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Chamarras</a>
                         
                         <p class="font-semibold text-blue-600 mt-2">Accesorios</p>
-                        <a href="#" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Calcetas</a>
-                        <a href="#" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Beanies</a>
-                        <a href="#" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Gorras</a>
-                        <a href="#" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Cinturones</a>
+                        <a href="/ropa/accesorios/calcetas" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Calcetas</a>
+                        <a href="/ropa/accesorios/beanies" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Beanies</a>
+                        <a href="/ropa/accesorios/gorras" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Gorras</a>
+                        <a href="/ropa/accesorios/cinturones" class="block pl-4 text-gray-600 hover:text-blue-600 transition-all">Cinturones</a>
                     </div>
                 </div>
 
@@ -252,16 +252,16 @@
                         </svg>
                     </button>
                     <div id="accesorios-submenu" class="hidden pl-4 mt-1 space-y-1">
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Mochilas</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Stickers</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Carteras</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Fingerboards</a>
-                        <a href="#" class="block text-gray-600 hover:text-blue-600 transition-all">Gafas</a>
+                        <a href="/accesorios/mochilas" class="block text-gray-600 hover:text-blue-600 transition-all">Mochilas</a>
+                        <a href="/accessorios/stickers" class="block text-gray-600 hover:text-blue-600 transition-all">Stickers</a>
+                        <a href="/accesorios/carteras" class="block text-gray-600 hover:text-blue-600 transition-all">Carteras</a>
+                        <a href="/accesorios/fingerboards" class="block text-gray-600 hover:text-blue-600 transition-all">Fingerboards</a>
+                        <a href="/accesorios/gafas" class="block text-gray-600 hover:text-blue-600 transition-all">Gafas</a>
                     </div>
                 </div>
 
                 <!-- Mapa móvil -->
-                <a href="#" class="block text-gray-700 hover:text-blue-600 transition-all">📍 Mapa</a>
+                <a href="/mapa" class="block text-gray-700 hover:text-blue-600 transition-all">📍 Mapa</a>
 
             </div>
 
@@ -295,6 +295,7 @@
                     <div class="p-4">
                         <h3 class="font-semibold text-lg">Skateboards</h3>
                         <p class="text-gray-600 mt-2">Tablas completas y componentes</p>
+                        <a href="/skate/tablas" class="mt-3 inline-block text-blue-600 hover:text-blue-800 transition-all">Ver productos →</a>
                     </div>
                 </div>
                 
@@ -305,6 +306,7 @@
                     <div class="p-4">
                         <h3 class="font-semibold text-lg">Patines</h3>
                         <p class="text-gray-600 mt-2">Patines y accesorios para roller</p>
+                        <a href="/roller/patines" class="mt-3 inline-block text-blue-600 hover:text-blue-800 transition-all">Ver productos →</a>
                     </div>
                 </div>
                 
@@ -315,6 +317,7 @@
                     <div class="p-4">
                         <h3 class="font-semibold text-lg">Tenis</h3>
                         <p class="text-gray-600 mt-2">Calzado para skate y estilo</p>
+                        <a href="/tenis" class="mt-3 inline-block text-blue-600 hover:text-blue-800 transition-all">Ver productos →</a>
                     </div>
                 </div>
                 
@@ -325,6 +328,7 @@
                     <div class="p-4">
                         <h3 class="font-semibold text-lg">Ropa</h3>
                         <p class="text-gray-600 mt-2">Ropa técnica y casual</p>
+                        <a href="/ropa" class="mt-3 inline-block text-blue-600 hover:text-blue-800 transition-all">Ver productos →</a>
                     </div>
                 </div>
             </div>
@@ -342,11 +346,11 @@
                 <div>
                     <h4 class="font-semibold mb-4">Categorías</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-all">Skate</a></li>
-                        <li><a href="#" class="hover:text-white transition-all">Roller</a></li>
-                        <li><a href="#" class="hover:text-white transition-all">Tenis</a></li>
-                        <li><a href="#" class="hover:text-white transition-all">Ropa</a></li>
-                        <li><a href="#" class="hover:text-white transition-all">Accesorios</a></li>
+                        <li><a href="/skate/tablas" class="hover:text-white transition-all">Skate</a></li>
+                        <li><a href="/roller/patines" class="hover:text-white transition-all">Roller</a></li>
+                        <li><a href="/tenis" class="hover:text-white transition-all">Tenis</a></li>
+                        <li><a href="/ropa" class="hover:text-white transition-all">Ropa</a></li>
+                        <li><a href="/accesorios" class="hover:text-white transition-all">Accesorios</a></li>
                     </ul>
                 </div>
                 
