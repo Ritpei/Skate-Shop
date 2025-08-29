@@ -234,4 +234,3 @@ function toggleSubmenu(submenuId, arrowId) {
     arrow.classList.toggle('rotate-180');
 }
 </script>
-EOF

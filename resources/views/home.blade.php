@@ -1,4 +1,3 @@
-cat > resources/views/home.blade.php << 'EOF'
 @extends('layouts.app')
 
 @section('title', 'SkatePro - Inicio')
@@ -61,4 +60,3 @@ cat > resources/views/home.blade.php << 'EOF'
     </div>
 </div>
 @endsection
-EOF
