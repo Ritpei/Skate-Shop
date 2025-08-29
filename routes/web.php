@@ -5,9 +5,12 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
 // Página principal
+// Página principal - Ruta específica para home
 Route::get('/', function () {
-    return view('home');
+    return view('home'); // Vista especial para la página de inicio
 })->name('home');
+
+// ... el resto de tus rutas existentes
 
 // Rutas de autenticación
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -77,6 +80,7 @@ Route::get('/mapa', function () { return view('mapa'); })->name('mapa');
 // Carrito y Favoritos
 Route::get('/carrito', function () { return view('cart.index'); })->name('cart');
 Route::get('/favoritos', function () { return view('favorites.index'); })->name('favorites');
+
 
 // Ruta de productos
 Route::get('/productos', function () {
