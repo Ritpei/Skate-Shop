@@ -108,4 +108,69 @@ class ProductController extends Controller
         return redirect()->route('products.index')
             ->with('success', 'Producto creado exitosamente.');
     }
+
+    public function edit(Product $product)
+    {
+        $categories = Category::with('subcategories')->get();
+        $product->load('images');
+        return view('admin.products.edit', compact('product', 'categories'));
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'category_id' => 'required|exists:categories,id',
+            'subcategory_id' => 'nullable|exists:subcategories,id',
+            'description' => 'required|string',
+            'price' => 'required|numeric|min:0',
+            'compare_price' => 'nullable|numeric|min:0',
+            'quantity' => 'required|integer|min:0',
+            'sku' => 'nullable|string|unique:products,sku,' . $product->id,
+            'brand' => 'nullable|string|max:255',
+            'model' => 'nullable|string|max:255',
+            'specifications' => 'nullable|array',
+            'colors' => 'nullable|array',
+            'sizes' => 'nullable|array',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+
+        if ($product->name !== $request->name) {
+            $validated['slug'] = Str::slug($request->name);
+            $counter = 1;
+            while (Product::where('slug', $validated['slug'])->where('id', '!=', $product->id)->exists()) {
+                $validated['slug'] = Str::slug($request->name) . '-' . $counter;
+                $counter++;
+            }
+        }
+
+        $product->update($validated);
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $index => $image) {
+                $path = $image->store('products', 'public');
+                
+                $product->images()->create([
+                    'image_path' => $path,
+                    'order' => $product->images()->count() + $index
+                ]);
+            }
+        }
+
+        return redirect()->route('admin.products.index')
+            ->with('success', 'Producto actualizado exitosamente.');
+    }
+
+    public function destroy(Product $product)
+    {
+        foreach ($product->images as $image) {
+            Storage::disk('public')->delete($image->image_path);
+            $image->delete();
+        }
+
+        $product->delete();
+
+        return redirect()->route('admin.products.index')
+            ->with('success', 'Producto eliminado exitosamente.');
+    }
 }
