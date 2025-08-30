@@ -14,7 +14,7 @@
 <body class="bg-gray-100 font-sans">
     <!-- Header -->
     @include('partials.header')
-
+    
     <!-- Contenido específico de cada página -->
     <main class="max-w-7xl mx-auto px-4 py-8">
         @yield('content')
@@ -68,20 +68,21 @@
     </footer>
 
     <script>
-        function toggleMobileSearch() {
-            document.getElementById('mobile-search').classList.toggle('hidden');
-        }
-        
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
+    function toggleMobileSearch() {
+        document.getElementById('mobile-search').classList.toggle('hidden');
+    }
+    
+    function toggleMobileMenu() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
 
-        function toggleSubmenu(submenuId, arrowId) {
-            const submenu = document.getElementById(submenuId);
-            const arrow = document.getElementById(arrowId);
-            submenu.classList.toggle('hidden');
-            arrow.classList.toggle('rotate-180');
-        }
+    function toggleSubmenu(submenuId, arrowId) {
+        const submenu = document.getElementById(submenuId);
+        const arrow = document.getElementById(arrowId);
+        submenu.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+    }
     </script>
 </body>
 </html>
+EOF
