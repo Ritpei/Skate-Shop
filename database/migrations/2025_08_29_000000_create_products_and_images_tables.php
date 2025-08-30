@@ -8,6 +8,7 @@ return new class extends Migration
 {
     public function up()
     {
+        // Primero products
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
@@ -32,10 +33,22 @@ return new class extends Migration
             $table->integer('sales_count')->default(0);
             $table->timestamps();
         });
+
+        // Luego product_images que depende de products
+        Schema::create('product_images', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('product_id')->constrained()->onDelete('cascade');
+            $table->string('image_path');
+            $table->boolean('is_main')->default(false);
+            $table->integer('order')->default(0);
+            $table->text('alt_text')->nullable();
+            $table->timestamps();
+        });
     }
 
     public function down()
     {
+        Schema::dropIfExists('product_images');
         Schema::dropIfExists('products');
     }
 };

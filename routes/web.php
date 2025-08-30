@@ -3,14 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ProductController;
 
 // Página principal
-// Página principal - Ruta específica para home
 Route::get('/', function () {
-    return view('home'); // Vista especial para la página de inicio
+    return view('home');
 })->name('home');
-
-// ... el resto de tus rutas existentes
 
 // Rutas de autenticación
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -74,28 +72,26 @@ Route::prefix('accesorios')->group(function () {
     Route::get('/gafas', function () { return view('accesorios.gafas'); })->name('accesorios.gafas');
 });
 
+// Rutas de productos
+Route::get('/productos', [ProductController::class, 'index'])->name('products.index');
+Route::get('/productos/{category}', [ProductController::class, 'byCategory'])->name('products.byCategory');
+Route::get('/productos/{category}/{subcategory}', [ProductController::class, 'bySubcategory'])->name('products.bySubcategory');
+Route::get('/producto/{category}/{product}', [ProductController::class, 'show'])->name('products.show');
+
+// Panel de administración
+Route::prefix('admin')->group(function () {
+    Route::resource('products', \App\Http\Controllers\ProductController::class)->names([
+        'index' => 'admin.products.index',
+        'create' => 'admin.products.create',
+        'store' => 'admin.products.store',
+        'show' => 'admin.products.show',
+        'edit' => 'admin.products.edit',
+        'update' => 'admin.products.update',
+        'destroy' => 'admin.products.destroy'
+    ]);
+});
+
 // Otras rutas
 Route::get('/mapa', function () { return view('mapa'); })->name('mapa');
-
-// Carrito y Favoritos
 Route::get('/carrito', function () { return view('cart.index'); })->name('cart');
 Route::get('/favoritos', function () { return view('favorites.index'); })->name('favorites');
-
-
-// Ruta de productos
-Route::get('/productos', function () {
-    return view('products.index');
-})->name('products.index');
-Route::prefix('admin')->group(function () {
-    // Productos
-    Route::resource('products', \App\Http\Controllers\ProductController::class)
-        ->names([
-            'index' => 'admin.products.index',
-            'create' => 'admin.products.create',
-            'store' => 'admin.products.store',
-            'show' => 'admin.products.show',
-            'edit' => 'admin.products.edit',
-            'update' => 'admin.products.update',
-            'destroy' => 'admin.products.destroy'
-        ]);
-});
