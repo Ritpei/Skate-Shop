@@ -57,29 +57,31 @@
 
                 <!-- Menú Ropa -->
                 <div class="relative group">
-                    <button class="hover:text-blue-600 focus:outline-none flex items-center transition-all">
+                    <button class="hover:text-blue-600 focus:outline-none flex items-center">
                         Ropa <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
                     <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-48 z-10">
-                        <a href="/ropa" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Toda la Ropa</a>
-                        <a href="/ropa/hombre/playeras" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Hombre</a>
-                        <a href="/ropa/mujer/playeras" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Mujer</a>
+                        <a href="{{ route('ropa') }}" class="block px-4 py-2 hover:bg-gray-100 rounded">Toda la Ropa</a>
+                        <a href="{{ route('ropa.hombre') }}" class="block px-4 py-2 hover:bg-gray-100 rounded">👔 Hombre</a>
+                        <a href="{{ route('ropa.mujer') }}" class="block px-4 py-2 hover:bg-gray-100 rounded">👚 Mujer</a>
                     </div>
                 </div>
 
                 <!-- Menú Accesorios -->
                 <div class="relative group">
-                    <button class="hover:text-blue-600 focus:outline-none flex items-center transition-all">
+                    <button class="hover:text-blue-600 focus:outline-none flex items-center">
                         Accesorios <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
                     <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-48 z-10">
-                        <a href="/accesorios" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Todos</a>
-                        <a href="/accesorios/mochilas" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Mochilas</a>
-                        <a href="/accesorios/stickers" class="block px-4 py-2 hover:bg-gray-100 rounded transition-all">Stickers</a>
+                        <a href="{{ route('accesorios') }}" class="block px-4 py-2 hover:bg-gray-100 rounded">Todos</a>
+                        <a href="{{ route('accesorios.stickers') }}" class="block px-4 py-2 hover:bg-gray-100 rounded">🎨 Stickers</a>
+                        <a href="{{ route('accesorios.mochilas') }}" class="block px-4 py-2 hover:bg-gray-100 rounded">🎒 Mochilas</a>
+                        <a href="{{ route('accesorios.gorras') }}" class="block px-4 py-2 hover:bg-gray-100 rounded">🧢 Gorras</a>
+                        <a href="{{ route('accesorios.medias') }}" class="block px-4 py-2 hover:bg-gray-100 rounded">🧦 Medias</a>
                     </div>
                 </div>
 
@@ -108,9 +110,9 @@
                     <span class="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
                 </a>
 
-                <!-- Botón Login -->
-                <a href="/login" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">
-                    Iniciar Sesión
+                <!-- Botón Login - MODIFICADO: Icono en lugar de texto -->
+                <a href="/login" class="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all">
+                    <i class="fas fa-user text-lg"></i>
                 </a>
 
                 <!-- Botón Menú Móvil -->

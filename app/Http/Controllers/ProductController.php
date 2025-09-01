@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    // Métodos públicos para el frontend
     public function index()
     {
         $products = Product::with('category', 'images')
@@ -58,7 +59,13 @@ class ProductController extends Controller
         return view('products.subcategory', compact('category', 'subcategory', 'products'));
     }
 
-    // Métodos de administración (si los necesitas)
+    // Métodos de administración
+    public function adminIndex()
+    {
+        $products = Product::with('category')->orderBy('created_at', 'desc')->paginate(10);
+        return view('admin.products.index', compact('products'));
+    }
+
     public function create()
     {
         $categories = Category::with('subcategories')->get();
@@ -78,12 +85,15 @@ class ProductController extends Controller
             'sku' => 'nullable|string|unique:products,sku',
             'brand' => 'nullable|string|max:255',
             'model' => 'nullable|string|max:255',
+            'is_featured' => 'nullable|boolean',
+            'is_active' => 'nullable|boolean',
             'specifications' => 'nullable|array',
             'colors' => 'nullable|array',
             'sizes' => 'nullable|array',
             'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
+        // Crear slug único
         $validated['slug'] = Str::slug($request->name);
         $counter = 1;
         while (Product::where('slug', $validated['slug'])->exists()) {
@@ -93,6 +103,7 @@ class ProductController extends Controller
 
         $product = Product::create($validated);
 
+        // Manejar imágenes
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $index => $image) {
                 $path = $image->store('products', 'public');
@@ -105,7 +116,7 @@ class ProductController extends Controller
             }
         }
 
-        return redirect()->route('products.index')
+        return redirect()->route('admin.products.index')
             ->with('success', 'Producto creado exitosamente.');
     }
 
@@ -129,12 +140,15 @@ class ProductController extends Controller
             'sku' => 'nullable|string|unique:products,sku,' . $product->id,
             'brand' => 'nullable|string|max:255',
             'model' => 'nullable|string|max:255',
+            'is_featured' => 'nullable|boolean',
+            'is_active' => 'nullable|boolean',
             'specifications' => 'nullable|array',
             'colors' => 'nullable|array',
             'sizes' => 'nullable|array',
             'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
+        // Actualizar slug si el nombre cambió
         if ($product->name !== $request->name) {
             $validated['slug'] = Str::slug($request->name);
             $counter = 1;
@@ -146,6 +160,7 @@ class ProductController extends Controller
 
         $product->update($validated);
 
+        // Manejar nuevas imágenes
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $index => $image) {
                 $path = $image->store('products', 'public');
@@ -163,6 +178,7 @@ class ProductController extends Controller
 
     public function destroy(Product $product)
     {
+        // Eliminar imágenes del almacenamiento
         foreach ($product->images as $image) {
             Storage::disk('public')->delete($image->image_path);
             $image->delete();

@@ -45,6 +45,15 @@ Route::prefix('tenis')->group(function () {
 Route::prefix('ropa')->group(function () {
     Route::get('/', function () { return view('ropa.index'); })->name('ropa');
     
+    // RUTAS NUEVAS AGREGADAS:
+    Route::get('/hombre', function () { 
+        return view('ropa.hombre.index'); 
+    })->name('ropa.hombre');
+    
+    Route::get('/mujer', function () { 
+        return view('ropa.mujer.index'); 
+    })->name('ropa.mujer');
+    
     // Ropa - Hombre
     Route::get('/hombre/playeras', function () { return view('ropa.hombre.playeras'); })->name('ropa.hombre.playeras');
     Route::get('/hombre/pantalones', function () { return view('ropa.hombre.pantalones'); })->name('ropa.hombre.pantalones');
@@ -63,16 +72,27 @@ Route::prefix('ropa')->group(function () {
 });
 
 // Rutas de Accesorios
-Route::prefix('accesorios')->group(function () {
-    Route::get('/', function () { return view('accesorios.index'); })->name('accesorios');
-    Route::get('/mochilas', function () { return view('accesorios.mochilas'); })->name('accesorios.mochilas');
-    Route::get('/stickers', function () { return view('accesorios.stickers'); })->name('accesorios.stickers');
-    Route::get('/carteras', function () { return view('accesorios.carteras'); })->name('accesorios.carteras');
-    Route::get('/fingerboards', function () { return view('accesorios.fingerboards'); })->name('accesorios.fingerboards');
-    Route::get('/gafas', function () { return view('accesorios.gafas'); })->name('accesorios.gafas');
-});
+Route::get('/accesorios', function () { 
+    return view('accesorios.index');
+})->name('accesorios');
 
-// Rutas de productos
+Route::get('/accesorios/stickers', function () { 
+    return view('accesorios.stickers');
+})->name('accesorios.stickers');
+
+Route::get('/accesorios/mochilas', function () { 
+    return view('accesorios.mochilas');
+})->name('accesorios.mochilas');
+
+Route::get('/accesorios/gorras', function () { 
+    return view('accesorios.gorras');
+})->name('accesorios.gorras');
+
+Route::get('/accesorios/medias', function () { 
+    return view('accesorios.medias');
+})->name('accesorios.medias');
+
+// Rutas de productos (frontend)
 Route::get('/productos', [ProductController::class, 'index'])->name('products.index');
 Route::get('/productos/{category}', [ProductController::class, 'byCategory'])->name('products.byCategory');
 Route::get('/productos/{category}/{subcategory}', [ProductController::class, 'bySubcategory'])->name('products.bySubcategory');
@@ -80,15 +100,19 @@ Route::get('/producto/{category}/{product}', [ProductController::class, 'show'])
 
 // Panel de administración
 Route::prefix('admin')->group(function () {
-    Route::resource('products', \App\Http\Controllers\ProductController::class)->names([
-        'index' => 'admin.products.index',
-        'create' => 'admin.products.create',
-        'store' => 'admin.products.store',
-        'show' => 'admin.products.show',
-        'edit' => 'admin.products.edit',
-        'update' => 'admin.products.update',
-        'destroy' => 'admin.products.destroy'
-    ]);
+    // Rutas de productos (admin)
+    Route::get('/products', [ProductController::class, 'adminIndex'])->name('admin.products.index');
+    Route::get('/products/create', [ProductController::class, 'create'])->name('admin.products.create');
+    Route::post('/products', [ProductController::class, 'store'])->name('admin.products.store');
+    Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
+    Route::put('/products/{product}', [ProductController::class, 'update'])->name('admin.products.update');
+    Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+    
+    // API para subcategorías
+    Route::get('/categories/{category}/subcategories', function ($category) {
+        $subcategories = App\Models\Subcategory::where('category_id', $category)->get();
+        return response()->json($subcategories);
+    });
 });
 
 // Otras rutas
